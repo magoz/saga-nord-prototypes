@@ -308,6 +308,112 @@
 
     .moment p:last-child { margin-bottom: 0; }
 
+    .moment-image {
+      width: 100%;
+      max-width: 100%;
+      margin: 1.5rem 0 0.5rem;
+      display: block;
+    }
+
+    .moment-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .moment-image figcaption {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--label);
+      margin-top: 0.75rem;
+    }
+
+    /* Chapter gallery — 3-col grid after moments */
+    .chapter-gallery {
+      max-width: 1400px;
+      margin: 5rem auto 0;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .chapter-gallery figure {
+      margin: 0;
+    }
+
+    .chapter-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      display: block;
+    }
+
+    .chapter-gallery figure.tall img {
+      aspect-ratio: 3 / 4;
+    }
+
+    .chapter-gallery figure.wide {
+      grid-column: span 2;
+    }
+
+    .chapter-gallery figure.wide img {
+      aspect-ratio: 16 / 9;
+    }
+
+    .chapter-gallery figcaption {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--label);
+      margin-top: 0.75rem;
+      line-height: 1.4;
+    }
+
+    /* Full-bleed interlude image between chapters */
+    .interlude {
+      width: 100%;
+      height: 70vh;
+      min-height: 480px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .interlude::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(22,24,29,0) 0%, rgba(22,24,29,0.3) 100%);
+    }
+
+    /* Hotel / handler panel images */
+    .practical-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .practical-item .img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .practical-item .img-pair img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin-bottom: 0;
+    }
+
     /* ─────── Pull quote section ─────── */
 
     .quote-section {
@@ -491,6 +597,11 @@
       .cost-note { padding: 0 1.5rem; }
       .quote-section { padding: 6rem 1.5rem; }
       .pull-quote { padding-left: 1.5rem; }
+      .chapter-gallery { padding: 0 1.5rem; grid-template-columns: 1fr; gap: 1rem; margin-top: 3rem; }
+      .chapter-gallery figure.wide { grid-column: span 1; }
+      .chapter-gallery img, .chapter-gallery figure.tall img, .chapter-gallery figure.wide img { aspect-ratio: 4 / 3; }
+      .interlude { height: 50vh; min-height: 320px; }
+      .practical-item .img-pair { gap: 0.5rem; }
     }
   </style>
 </head>
@@ -530,7 +641,7 @@
       </div>
     </div>
 
-    <img class="chapter-image" src="img/arrival.jpg" alt="Harpa Concert Hall, Reykjavik harbour">
+    <img class="chapter-image" src="img/c1-harpa.jpg" alt="Harpa Concert Hall, Reykjavik — Olafur Eliasson's basalt-glass façade">
 
     <div class="moments">
       <div class="moment">
@@ -574,6 +685,17 @@
         </div>
       </div>
     </div>
+
+    <div class="chapter-gallery">
+      <figure class="wide">
+        <img src="img/c1-sky-lagoon.jpg" alt="Sky Lagoon oceanfront geothermal pool">
+        <figcaption>Sky Lagoon · the arrival ritual</figcaption>
+      </figure>
+      <figure>
+        <img src="img/c1-sumac.jpg" alt="Sumac — sharing plates">
+        <figcaption>Sumac · the table on Laugavegur</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ─────── CHAPTER TWO ─────── -->
@@ -586,7 +708,7 @@
       </div>
     </div>
 
-    <img class="chapter-image" src="img/rift.jpg" alt="Gullfoss waterfall on the Golden Circle">
+    <img class="chapter-image" src="img/c2-thingvellir.jpg" alt="Þingvellir rift valley — where the continents pull apart">
 
     <div class="moments">
       <div class="moment">
@@ -662,7 +784,37 @@
         </div>
       </div>
     </div>
+
+    <div class="chapter-gallery">
+      <figure class="wide">
+        <img src="img/c2-silfra.jpg" alt="Silfra — snorkelling between the tectonic plates">
+        <figcaption>Silfra · snorkel between the continents</figcaption>
+      </figure>
+      <figure>
+        <img src="img/c2-geysir.jpg" alt="Strokkur erupting at sunset">
+        <figcaption>Strokkur · the original geyser</figcaption>
+      </figure>
+      <figure>
+        <img src="img/c2-gullfoss.jpg" alt="Gullfoss waterfall from the air">
+        <figcaption>Gullfoss · from the air</figcaption>
+      </figure>
+      <figure>
+        <img src="img/c2-fridheimar.jpg" alt="Friðheimar tomato greenhouse — lunch among the plants">
+        <figcaption>Friðheimar · lunch in the greenhouse</figcaption>
+      </figure>
+      <figure>
+        <img src="img/c2-kerid.jpg" alt="Kerið Crater — turquoise lake at sunset">
+        <figcaption>Kerið · the crater on the way back</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="img/c2-dill.jpg" alt="A plated course at Dill">
+        <figcaption>Dill · the only Michelin star in Iceland</figcaption>
+      </figure>
+    </div>
   </section>
+
+  <!-- ─────── INTERLUDE ─────── -->
+  <div class="interlude" style="background-image: url('img/c2-fridheimar-detail.png');" aria-label="Friðheimar greenhouse interior"></div>
 
   <!-- ─────── CHAPTER THREE ─────── -->
   <section class="chapter section-light">
@@ -674,7 +826,7 @@
       </div>
     </div>
 
-    <img class="chapter-image" src="img/fjord.jpg" alt="Hvalfjörður — the Whale Fjord — near Hvammsvík">
+    <img class="chapter-image" src="img/c3-hvammsvik.jpg" alt="Hvammsvík Hot Springs — oceanfront geothermal pools, Hvalfjörður">
 
     <div class="moments">
       <div class="moment">
@@ -710,6 +862,17 @@
           <p>After dinner, a short walk back to the Edition. Upstairs to THE ROOF, the seventh-floor bar with a wraparound view of the ocean and the mountains. Champagne and cake are waiting. The rest of the night is whatever the group decides it is.</p>
         </div>
       </div>
+    </div>
+
+    <div class="chapter-gallery">
+      <figure>
+        <img src="img/c3-hvammsvik-detail.jpg" alt="Hvammsvík — the eight natural hot pools at the fjord's edge">
+        <figcaption>Hvammsvík · pools at the ocean's edge</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="img/c3-matur.jpg" alt="Matur og Drykkur — the 1924 saltfish factory restaurant">
+        <figcaption>Matur og Drykkur · the birthday dinner</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -762,6 +925,11 @@
       <div class="practical-item">
         <div class="kicker">The Hotel</div>
         <h3>The Reykjavik Edition</h3>
+        <img src="img/edition-exterior.jpg" alt="The Reykjavik Edition at night, harbourside">
+        <div class="img-pair">
+          <img src="img/edition-lobby.jpg" alt="The Edition lobby">
+          <img src="img/edition-room.jpg" alt="An Edition guest room">
+        </div>
         <p>Austurbakki 2, on the harbour, downtown. Ian Schrager's Edition line. A modern five-star hotel that opened in 2021, with four restaurants and bars inside it — including Tides on the ground floor, whose menu is overseen by the chef of Dill, and THE ROOF on the seventh. Four rooms for three nights, suggested split: two Corner Suites and two Deluxe Kings, each with floor-to-ceiling windows over the harbour and the mountains.</p>
         <p>The Edition is not the experience. It is the comfortable base the experience runs from. For this group, that is exactly right.</p>
       </div>
