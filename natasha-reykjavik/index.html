@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weekend at the Edge — A Private Journey for Natasha Robakidze · SAGA & NORD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F4EDE3;
+      --light: #F7F3EC;
+      --amber: #8E6038;
+      --forest: #4C5961;
+      --label: #6D7A83;
+      --dark: #22252C;
+      --dark-bg: #16181D;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--forest);
+      background: var(--cream);
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ─────── Typography ─────── */
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .wordmark .amp {
+      color: var(--amber);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      padding: 0 0.15em;
+    }
+
+    .kicker {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--label);
+    }
+
+    .display {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 0.95;
+      letter-spacing: -0.015em;
+    }
+
+    h2.section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1;
+      color: var(--dark);
+      letter-spacing: -0.015em;
+      max-width: 14em;
+    }
+
+    body p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 1.0625rem;
+      line-height: 1.78;
+      color: var(--forest);
+      max-width: 38em;
+      margin-bottom: 1.5em;
+    }
+
+    body p:last-child { margin-bottom: 0; }
+
+    .pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+      line-height: 1.22;
+      color: var(--dark);
+      max-width: 22em;
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .pull-quote::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 3px;
+      height: 1.6em;
+      background: var(--amber);
+    }
+
+    /* ─────── Hero ─────── */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.5rem 3rem 5rem;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(22,24,29,0.55) 0%, rgba(22,24,29,0.15) 35%, rgba(22,24,29,0.8) 100%),
+        url('https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+      color: var(--light);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-top .wordmark {
+      font-size: 1.25rem;
+      color: var(--light);
+    }
+
+    .hero-top .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(247,243,236,0.7);
+    }
+
+    .hero-content {
+      max-width: 960px;
+    }
+
+    .hero-kicker {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(247,243,236,0.85);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(3.2rem, 8.5vw, 7.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--light);
+      margin-bottom: 2rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+      color: rgba(247,243,236,0.9);
+      max-width: 32em;
+      line-height: 1.3;
+    }
+
+    /* ─────── Layout ─────── */
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-narrow {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      padding: 9rem 0;
+    }
+
+    .section-cream { background: var(--cream); }
+    .section-light { background: var(--light); }
+
+    /* ─────── Thesis ─────── */
+
+    .thesis .kicker { margin-bottom: 2rem; }
+    .thesis h2 { margin-bottom: 3.5rem; }
+
+    /* ─────── Chapters ─────── */
+
+    .chapter { padding: 9rem 0; }
+
+    .chapter-header {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+      padding: 0 2rem;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: baseline;
+    }
+
+    .chapter-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--label);
+      padding-top: 1rem;
+    }
+
+    .chapter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+    }
+
+    .chapter-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+      color: var(--amber);
+      margin-top: 0.75rem;
+      display: block;
+    }
+
+    .chapter-image {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto 5rem;
+      height: 65vh;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .moments {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .moment {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 2.5rem;
+      padding: 2.75rem 0;
+      border-top: 1px solid rgba(109,122,131,0.22);
+    }
+
+    .moment:last-child {
+      border-bottom: 1px solid rgba(109,122,131,0.22);
+    }
+
+    .moment-time {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--label);
+      padding-top: 0.6rem;
+    }
+
+    .moment h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.7rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .moment p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--forest);
+      max-width: none;
+      margin-bottom: 1em;
+    }
+
+    .moment p:last-child { margin-bottom: 0; }
+
+    /* ─────── Pull quote section ─────── */
+
+    .quote-section {
+      padding: 10rem 2rem;
+      background: var(--cream);
+    }
+
+    .quote-section .inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ─────── Practical ─────── */
+
+    .practical { padding: 9rem 0; background: var(--light); }
+
+    .practical .kicker { margin-bottom: 2rem; }
+    .practical h2 { margin-bottom: 5rem; }
+
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .practical-item .kicker {
+      margin-bottom: 1rem;
+    }
+
+    .practical-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 2.1rem;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .practical-header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─────── Cost ─────── */
+
+    .cost { padding: 9rem 0; background: var(--cream); }
+
+    .cost .kicker { margin-bottom: 2rem; }
+    .cost h2 { margin-bottom: 1.5rem; }
+    .cost > .section-narrow > p { margin-bottom: 3.5rem; }
+
+    .cost-table {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .cost-row {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 3rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(109,122,131,0.22);
+      align-items: baseline;
+    }
+
+    .cost-row .label-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: var(--forest);
+    }
+
+    .cost-row .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--dark);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .cost-total {
+      grid-template-columns: 3fr 1fr;
+      padding: 2.5rem 0 0.5rem;
+      border-top: 2px solid var(--dark);
+      border-bottom: none;
+      margin-top: 1.5rem;
+    }
+
+    .cost-total .label-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .cost-total .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--amber);
+    }
+
+    .cost-note {
+      max-width: 820px;
+      margin: 3.5rem auto 0;
+      padding: 0 2rem;
+    }
+
+    /* ─────── Honest ─────── */
+
+    .honest { background: var(--light); padding: 9rem 0; }
+    .honest .kicker { margin-bottom: 2rem; }
+    .honest h2 { margin-bottom: 3rem; }
+
+    /* ─────── Closing ─────── */
+
+    .closing {
+      background: var(--dark-bg);
+      color: var(--light);
+      padding: 11rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(1.8rem, 3.4vw, 3rem);
+      color: rgba(247,243,236,0.92);
+      max-width: 24em;
+      margin: 0 auto 5rem;
+      line-height: 1.3;
+      letter-spacing: -0.005em;
+    }
+
+    .closing .wordmark {
+      font-size: 1.4rem;
+      color: var(--light);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .closing .footer-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(247,243,236,0.5);
+    }
+
+    .closing-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--amber);
+      margin: 0 auto 5rem;
+    }
+
+    /* ─────── Responsive ─────── */
+
+    @media (max-width: 820px) {
+      .hero { padding: 2rem 1.5rem 3.5rem; }
+      .section, .chapter, .thesis, .cost, .practical, .honest { padding: 5.5rem 0; }
+      .chapter-header { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 3rem; padding: 0 1.5rem; }
+      .chapter-number { padding-top: 0; }
+      .chapter-image { height: 50vh; min-height: 300px; margin-bottom: 3rem; }
+      .moments { padding: 0 1.5rem; }
+      .moment { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 0; }
+      .moment-time { padding-top: 0; }
+      .practical-grid { grid-template-columns: 1fr; gap: 3.5rem; padding: 0 1.5rem; }
+      .practical-header { padding: 0 1.5rem; }
+      .section-narrow { padding: 0 1.5rem; }
+      .cost-row { grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+      .cost-table { padding: 0 1.5rem; }
+      .cost-note { padding: 0 1.5rem; }
+      .quote-section { padding: 6rem 1.5rem; }
+      .pull-quote { padding-left: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─────── HERO ─────── -->
+  <section class="hero">
+    <div class="hero-top">
+      <div class="wordmark">SAGA <span class="amp">&amp;</span> NORD</div>
+      <div class="meta">Private Journey · April 2026</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-kicker">For Natasha Robakidze</div>
+      <h1 class="hero-title">The Weekend<br>at the Edge</h1>
+      <p class="hero-subtitle">Four days in Reykjavik for her fiftieth.</p>
+    </div>
+  </section>
+
+  <!-- ─────── THESIS ─────── -->
+  <section class="section thesis section-cream">
+    <div class="section-narrow">
+      <div class="kicker">A note to David</div>
+      <h2 class="section-heading">A weekend where eight people who like each other end up somewhere they didn't expect.</h2>
+      <p>Natasha is turning fifty. You're taking her to Iceland with three couples from London and Madrid — people she's known for years, in rooms she's never been in before. The brief is simple. Not luxury in the way that word gets thrown around at travel agents. Quality without friction. Hot springs, real food, a landscape that does most of the work, and time to sit at dinner for four hours because the conversation is good.</p>
+      <p>Iceland in April is the right answer for that. It is cold, it is windy, the weather changes inside an hour, and the light is long and getting longer. The Reykjavik Edition is where you sleep and where the bags live. Everything else happens off-property — in a 1924 saltfish factory, in a tomato greenhouse heated by the earth, in a fjord where eight natural hot pools run into the North Atlantic. The hotel is American hospitality in a foreign country. The trip is the foreign country.</p>
+      <p>Four days, three nights, three dinners, two mornings in hot water, one full day driving into the rift between continents. Built for people who have seen most things and still want to be surprised.</p>
+    </div>
+  </section>
+
+  <!-- ─────── CHAPTER ONE ─────── -->
+  <section class="chapter section-light">
+    <div class="chapter-header">
+      <div class="chapter-number">Chapter One</div>
+      <div>
+        <h2 class="chapter-title">Arrival</h2>
+        <span class="chapter-subtitle">Thursday · Reykjavik</span>
+      </div>
+    </div>
+
+    <img class="chapter-image" src="https://images.unsplash.com/photo-1671031139138-bb24b42e73a1?auto=format&fit=crop&w=1800&q=80" alt="Reykjavik harbour in spring light">
+
+    <div class="moments">
+      <div class="moment">
+        <div class="moment-time">09:00</div>
+        <div>
+          <h4>Landing in Keflavík</h4>
+          <p>A private minibus from Hidden Iceland meets the group at arrivals. Forty-five minutes through a lava field to the harbourside downtown. Bags to the Edition. Early check-in is arranged in advance — the rooms will be ready. For anyone who wants coffee before the water, Reykjavik Roasters on Kárastígur is five minutes from the hotel.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">11:00</div>
+        <div>
+          <h4>Sky Lagoon — the arrival ritual</h4>
+          <p>Fifteen minutes from the hotel, on the Kópavogur peninsula, an infinity-edge geothermal pool sits directly over the North Atlantic. The Skjól ritual is seven steps — pool, cold plunge, sauna, cold mist, body scrub, steam, pool — and it is the fastest way to undo a red-eye that exists. Private Sér changing for the group. Three hours. No phones.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">14:00</div>
+        <div>
+          <h4>The afternoon protected</h4>
+          <p>Back to the Edition. Proper check-in, naps, showers, whatever the body needs. This afternoon is deliberate — day one on no sleep is a bad opening, and the rest of the weekend is better for leaving it quiet.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">17:00</div>
+        <div>
+          <h4>A walk through the city</h4>
+          <p>Reykjavik on foot. Harpa Concert Hall, whose basalt-glass façade was designed by Olafur Eliasson and which Natasha will recognise the moment she sees it. The old harbour. Up Laugavegur. No agenda. A glass of wine somewhere if a window calls.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">19:30</div>
+        <div>
+          <h4>Dinner at Sumac</h4>
+          <p>Laugavegur 28. Middle Eastern and Mediterranean cooking built around Icelandic ingredients — one of the most loved restaurants in Reykjavik, and the one that hums on a Thursday night. Open seating in the main room, not a private corner. This group wants to be inside the city, not sealed off from it. Sharing plates, big wines, warm noise.</p>
+          <p>Hidden Iceland has sent the restaurant a note about the birthday weekend and the group will be looked after. The staff will have two or three bar recommendations ready when dinner winds down — Kaffibarinn, Pablo Discobar, Kaldi, Tölt downstairs at the hotel. Whoever still has the energy picks the night.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── CHAPTER TWO ─────── -->
+  <section class="chapter section-cream">
+    <div class="chapter-header">
+      <div class="chapter-number">Chapter Two</div>
+      <div>
+        <h2 class="chapter-title">Into the Rift</h2>
+        <span class="chapter-subtitle">Friday · The Golden Circle and a Michelin star</span>
+      </div>
+    </div>
+
+    <img class="chapter-image" src="https://images.unsplash.com/photo-1531168556467-80aace0d0144?auto=format&fit=crop&w=1800&q=80" alt="Gullfoss waterfall in spring">
+
+    <div class="moments">
+      <div class="moment">
+        <div class="moment-time">08:30</div>
+        <div>
+          <h4>Depart the Edition</h4>
+          <p>Private luxury minibus with a senior guide from Hidden Iceland. One of the founders — or their most experienced private guide — will be with the group for the day.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">09:15</div>
+        <div>
+          <h4>Þingvellir — where the continents pull apart</h4>
+          <p>The North American and Eurasian tectonic plates diverge by about two centimetres a year, and the seam runs straight through the Þingvellir rift valley. The Icelandic parliament first met here in 930 AD, in the open air, at Almannagjá. The walk down the rift takes forty minutes. The Öxarárfoss waterfall is at the end of it.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">09:45</div>
+        <div>
+          <h4>Silfra — snorkel between the plates</h4>
+          <p>At Silfra, a fissure in the same rift fills with glacial meltwater so clear you can see a hundred metres through it. The water is two degrees, the dry suits do the work, and the guides from DIVE.IS have run thousands of these. Two and a half hours including briefing and changing. This is the part of the trip some of the group will remember forever and the rest will politely pass on. Anyone who stays dry has the rest of the park — the lake, the old church, the coin gorge.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">13:00</div>
+        <div>
+          <h4>Geysir — where the English word comes from</h4>
+          <p>The geothermal field at Geysir is where the word geyser entered the English language. The original Great Geysir is dormant these days. Strokkur, next to it, erupts every five to ten minutes, twenty metres straight up, on a schedule you can almost set a watch to. Half an hour is plenty.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">13:40</div>
+        <div>
+          <h4>Gullfoss</h4>
+          <p>The Hvítá river drops in two tiers into a narrow canyon. In April there is still ice at the edges. Both viewing platforms are worth the walk.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">14:30</div>
+        <div>
+          <h4>Lunch at Friðheimar</h4>
+          <p>Reykholt. A working tomato greenhouse heated entirely by geothermal water, growing tomatoes year-round under glass on a farm where winter outside is four months of darkness. Lunch is served inside the greenhouse, at tables set among the plants — tomato soup refilled from a silver pot, bread baked that morning, and a cocktail program built entirely from tomatoes. Bloody marys, tomato schnapps, tomato beer. Nobody expects any of it. That is part of why it works.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">16:00</div>
+        <div>
+          <h4>Kerið Crater</h4>
+          <p>A twenty-minute stop on the route back. A volcanic crater fifty-five metres deep with a turquoise lake at the bottom. The rim walk takes fifteen minutes. The birthday group photograph happens here, because the light in April is already long and this is the best frame on the Golden Circle.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">17:15</div>
+        <div>
+          <h4>Back at the Edition</h4>
+          <p>Rest, change, reset.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">20:00</div>
+        <div>
+          <h4>Dinner at Dill</h4>
+          <p>Laugavegur 59. The only Michelin-starred restaurant on the island, run by Gunnar Karl Gíslason — a chef who has spent twenty years reading the Icelandic landscape through foraging, fermentation, and seasonality. Tasting menu with wine pairing. Small room. This is the serious dinner of the three, where the food does the talking.</p>
+          <p>After, if the night wants to keep going: the rooftop at Petersen Svítan, or live music at Dillon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── CHAPTER THREE ─────── -->
+  <section class="chapter section-light">
+    <div class="chapter-header">
+      <div class="chapter-number">Chapter Three</div>
+      <div>
+        <h2 class="chapter-title">Natasha's Day</h2>
+        <span class="chapter-subtitle">Saturday · Whale Fjord and a saltfish factory</span>
+      </div>
+    </div>
+
+    <img class="chapter-image" src="https://images.unsplash.com/photo-1520769945061-0a448c463865?auto=format&fit=crop&w=1800&q=80" alt="Icelandic fjord at dusk">
+
+    <div class="moments">
+      <div class="moment">
+        <div class="moment-time">10:00</div>
+        <div>
+          <h4>North into Whale Fjord</h4>
+          <p>Forty-five minutes up the coast to Hvalfjörður. The road runs under the mountains, the sea is on the left, and the weather is doing whatever April wants it to do.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">11:00</div>
+        <div>
+          <h4>Hvammsvík Hot Springs</h4>
+          <p>Eight natural geothermal pools at varying temperatures, set directly along the shoreline of the fjord, backed by mountains and a black beach. Contemporary art installations across the property. This is not a spa. It is hot water running into the North Atlantic in a wild fjord, in April wind, with snow still on the ridges above. Lunch at Stormur, the small bistro on site.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">15:00</div>
+        <div>
+          <h4>Free afternoon in Reykjavik</h4>
+          <p>Back to the city. The afternoon is open. Rest, the hotel spa, a slow walk, shopping on Laugavegur, the Reykjavik Art Museum for anyone curious. For the more restless: a two-hour whale-watching RIB from the old harbour, or a gentle ride through a lava field on an Icelandic horse. Hidden Iceland can book either the moment hands go up.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">19:30</div>
+        <div>
+          <h4>The Birthday Dinner — Matur og Drykkur</h4>
+          <p>Grandagarður 2, on the Grandi harbour. The building is a 1924 saltfish processing factory, preserved and repurposed. The restaurant is family-run, Michelin Selected, and built on a single idea — cook what old Icelandic cookbooks and manuscripts describe, using wild herbs and foraged ingredients and land-and-sea cooking, the way it was done before the supermarket arrived on the island.</p>
+          <p>The ten-course tasting menu moves through arctic char, highland lamb, skyr, fermented butter, wild greens. The chef comes out of the kitchen. The room is small enough that the table will feel like a room of its own even at eight. Hidden Iceland has arranged a small moment at dessert — a candle, flowers on the table, a short word from the chef about where the menu comes from. Nothing theatrical. Nothing of the wrong register.</p>
+          <p>After dinner, a short walk back to the Edition. Upstairs to THE ROOF, the seventh-floor bar with a wraparound view of the ocean and the mountains. Champagne and cake are waiting. The rest of the night is whatever the group decides it is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── CHAPTER FOUR ─────── -->
+  <section class="chapter section-cream">
+    <div class="chapter-header">
+      <div class="chapter-number">Chapter Four</div>
+      <div>
+        <h2 class="chapter-title">The Last Morning</h2>
+        <span class="chapter-subtitle">Sunday · Goodbye</span>
+      </div>
+    </div>
+
+    <div class="moments">
+      <div class="moment">
+        <div class="moment-time">Morning</div>
+        <div>
+          <h4>A slow breakfast, nothing on the clock</h4>
+          <p>Breakfast at Tides, the ground-floor restaurant at the Edition, where the menu is overseen by Gunnar Gíslason of Dill. No schedule. Some of the group will want one last walk along the harbour or a coffee at Reykjavik Roasters. The rest will want to sit.</p>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time">Midday</div>
+        <div>
+          <h4>Private transfer to Keflavík</h4>
+          <p>Minibus from Hidden Iceland. Forty-five minutes. Done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── PULL QUOTE ─────── -->
+  <section class="quote-section">
+    <div class="inner">
+      <blockquote class="pull-quote">
+        The hotel is where you sleep.<br>The island is why you came.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ─────── PRACTICAL ─────── -->
+  <section class="practical">
+    <div class="practical-header">
+      <div class="kicker">Practical</div>
+      <h2 class="section-heading">Where you sleep, and who is with you.</h2>
+    </div>
+
+    <div class="practical-grid">
+      <div class="practical-item">
+        <div class="kicker">The Hotel</div>
+        <h3>The Reykjavik Edition</h3>
+        <p>Austurbakki 2, on the harbour, downtown. Ian Schrager's Edition line. A modern five-star hotel that opened in 2021, with four restaurants and bars inside it — including Tides on the ground floor, whose menu is overseen by the chef of Dill, and THE ROOF on the seventh. Four rooms for three nights, suggested split: two Corner Suites and two Deluxe Kings, each with floor-to-ceiling windows over the harbour and the mountains.</p>
+        <p>The Edition is not the experience. It is the comfortable base the experience runs from. For this group, that is exactly right.</p>
+      </div>
+
+      <div class="practical-item">
+        <div class="kicker">The Local Handler</div>
+        <h3>Hidden Iceland</h3>
+        <p>Founder-owned by three co-owners — Dagný Björg Stefánsdóttir, Scott Drummond, and Ryan Connolly. Serandipians Grand DMC Champion Gold 2025 and 2026, which is the European luxury gold standard and one of the hardest credentials to hold on the island. XO Private partner.</p>
+        <p>One senior travel expert is assigned to the trip and is the single point of contact on WhatsApp from the moment planning starts to the moment the minibus pulls away from Keflavík on Sunday. They coordinate airport transfers, the Golden Circle day, Silfra, Friðheimar, Hvammsvík, all restaurant bookings, the birthday-dinner coordination with Matur og Drykkur, the Sky Lagoon passes, and anything else the group raises on the fly. Weather in Iceland changes hourly in April. The WhatsApp relationship is how that gets handled without any of it touching the group.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────── COST ─────── -->
+  <section class="cost">
+    <div class="section-narrow">
+      <div class="kicker">The Investment</div>
+      <h2 class="section-heading">Everything, transparent.</h2>
+      <p>All figures in EUR, for eight people across four days and three nights. David covers the full trip.</p>
+    </div>
+
+    <div class="cost-table">
+      <div class="cost-row">
+        <div class="label-text">The Reykjavik Edition — four rooms, three nights (two Corner Suites, two Deluxe Kings)</div>
+        <div class="value">11,000 – 14,000</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Hidden Iceland — full trip management: airport transfers, the Friday Golden Circle with private guide, minibus and Silfra for eight, Friðheimar lunch, Kerið, the Saturday Hvammsvík day, one optional Saturday activity, restaurant and birthday-dinner coordination, 24/7 WhatsApp trip manager</div>
+        <div class="value">15,000 – 18,500</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Sky Lagoon Sér pass × 8</div>
+        <div class="value">~680</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Thursday — Sumac, sharing plates and wine for eight</div>
+        <div class="value">1,200 – 1,800</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Friday — Dill, tasting menu with wine pairing × 8</div>
+        <div class="value">2,400 – 2,800</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Saturday — Matur og Drykkur, ten-course tasting with wine × 8</div>
+        <div class="value">1,900 – 2,300</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Drinks, bar tabs, incidentals across three nights</div>
+        <div class="value">1,500 – 2,500</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Birthday champagne, cake, flowers at THE ROOF</div>
+        <div class="value">400 – 600</div>
+      </div>
+      <div class="cost-row">
+        <div class="label-text">Flights — business class return, London × 4 and Madrid × 4</div>
+        <div class="value">7,500 – 13,000</div>
+      </div>
+      <div class="cost-row cost-total">
+        <div class="label-text">Full trip, all in</div>
+        <div class="value">~48,000</div>
+      </div>
+    </div>
+
+    <div class="cost-note">
+      <p>Working figure is around 48,000 EUR. A leaner version — Deluxe Kings instead of Corner Suites, lighter wine choices, a simpler Saturday afternoon — lands closer to 37,000. A splashier one — the Penthouse, private whale-watching RIB, business flights for everyone — comes in around 56,000. Every number above is a range, not a quote. Hidden Iceland will confirm the exact figures the moment the brief reaches them.</p>
+    </div>
+  </section>
+
+  <!-- ─────── HONEST ─────── -->
+  <section class="honest">
+    <div class="section-narrow">
+      <div class="kicker">Honest</div>
+      <h2 class="section-heading">What we don't yet know.</h2>
+      <p>Room rates at the Edition for April will be confirmed with the hotel directly. Hidden Iceland will return exact figures on the full day of private guiding and the local handling package within forty-eight hours of receiving the brief. Silfra is offered year-round but will be confirmed by DIVE.IS for the specific Friday date. Matur og Drykkur opens Thursday to Sunday — Saturday works, but the reservation must be placed six to eight weeks out given the size of the table. Northern lights are possible in very early April but are not planned around; the April daylight is already too long to rely on them. Everything else is real, and booked the moment this goes forward.</p>
+    </div>
+  </section>
+
+  <!-- ─────── CLOSING ─────── -->
+  <section class="closing">
+    <h2>Four days. Three dinners. Two mornings in hot water. One trip into the rift between continents. And Natasha's fiftieth, which only happens once.</h2>
+    <div class="closing-divider"></div>
+    <div class="wordmark">SAGA <span class="amp">&amp;</span> NORD</div>
+    <div class="footer-meta">A private journey · Prepared for David Robakidze · April 2026</div>
+  </section>
+
+</body>
+</html>
